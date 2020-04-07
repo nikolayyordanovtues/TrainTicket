@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1586192679 source:c:\users\niki\desktop\trainticket-master (1)\trainticket-master\trainticket\main.c
+	<stdio.h>
+	<stdlib.h>
+
