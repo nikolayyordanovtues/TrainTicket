@@ -26,7 +26,6 @@ int main()
         //input how many tickets does the passenger want
         printf("How many tickets does the passenger want: ");
         scanf("%d", &desiredNumOfTickets);
-        finalPrice = finalPrice + ticketPrice*desiredNumOfTickets;
         //input: name
         printf("Please enter the name of the passenger (firstName-lastName): ");
         scanf("%s", name);
@@ -68,6 +67,29 @@ int main()
                 freeSeats[seat - 1] = 1;
             }
         }
+        //calculating discount
+        if(strcmp(isStudentOrRetired, "y")==0)
+        {
+            totalDiscount = totalDiscount + 50;
+        }
+        if(age<16)
+        {
+            totalDiscount = totalDiscount + 10;
+        }
+        if(desiredNumOfTickets> 1 )
+        {
+            totalDiscounts = totalDiscount +5;
+        }
+        //calculating the price
+        finalPrice = finalPrice + ticketPrice;
+        if(strcmp(coupe, "sleeping")==0)
+        {
+            finalPrice = finalPrice + 10;
+        }
+        finalPrice = finalPrice * desiredNumOfTickets;
+        //finalizing the price
+        finalPrice =finalPrice * (100 - totalDiscount)/100;
+        printf("%d", finalPrice);
         //print receipt
         printReceipt();
         //check if there are more customers after the current one
